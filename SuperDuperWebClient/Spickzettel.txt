@@ -1,0 +1,8 @@
+﻿// Speichern einer Person
+
+var personSaved = new NewPersonRegistered {
+	EntityId = person.FirstName + "-" + person.LastName,
+	Person = person
+};
+
+eventStore.Store (personSaved);

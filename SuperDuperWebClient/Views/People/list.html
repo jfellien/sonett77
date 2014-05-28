@@ -1,0 +1,13 @@
+﻿@Master['layout']
+
+@Section['Content']
+<div class="form">
+	<h3>Events of @Model.EventsOf</h3>
+
+	@Each.List
+		@Current
+	@EndEach
+
+</div>
+
+@EndSection

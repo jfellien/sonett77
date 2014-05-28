@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>Sonett 77</title>
+
+	<link href="@Path['~/Content/css/bootstrap.min.css']" rel="stylesheet" type="text/css"/>
+	<link href="@Path['~/Content/css/own-style.css']" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+	<div class="jumbotron" id="head">
+		<div class="container">
+			<ul class="list-inline">
+				<li>
+					<img class="img-responsive img-thumbnail img-size-150" src="@Path['~/Content/nancy-logo.png']" alt="Nancy logo" />
+				</li>
+				<li>
+					<h2>Sonett 77 --<br/>
+					EventStore Sample</h2>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container">
+		<nav>
+			<ul class="nav nav-pills">
+				<li><a href="/index">Home</a></li>
+				<li><a href="/people/new">Add new Person</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="container">
+		@Section['Content']
+	</div>
+</body>
+</html>

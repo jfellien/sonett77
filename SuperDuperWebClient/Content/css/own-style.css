@@ -1,0 +1,30 @@
+﻿	.img-size-150{
+		width: 150px;
+		height: 150px;
+	}
+
+	.left {
+		float: left;
+	}
+
+	.right {
+		float:right;
+	}
+
+	#head h2{
+		position: absolute;
+		margin-top: 5px;
+	}
+
+	nav {
+		margin-bottom: 15px;
+	}
+
+	.application-description {
+		text-align: center;
+	}
+
+	.form{
+		background-color: #eee;
+		padding: 10px;
+	}
