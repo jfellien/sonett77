@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventStore.Contracts", "Eve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperDuperWebClient", "SuperDuperWebClient\SuperDuperWebClient.csproj", "{0DC2C75A-226A-4D0C-8722-8B35E008760D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleDomain", "SampleDomain\SampleDomain.csproj", "{834714A2-295E-4AEA-84E6-0CE7FA9DBD39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{417F575A-E4E8-4EF7-B913-9FCDBF257C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{417F575A-E4E8-4EF7-B913-9FCDBF257C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{417F575A-E4E8-4EF7-B913-9FCDBF257C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{834714A2-295E-4AEA-84E6-0CE7FA9DBD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{834714A2-295E-4AEA-84E6-0CE7FA9DBD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{834714A2-295E-4AEA-84E6-0CE7FA9DBD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{834714A2-295E-4AEA-84E6-0CE7FA9DBD39}.Release|Any CPU.Build.0 = Release|Any CPU
 		{98B12F43-61D6-4592-83F0-195625C6C3A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{98B12F43-61D6-4592-83F0-195625C6C3A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98B12F43-61D6-4592-83F0-195625C6C3A4}.Release|Any CPU.ActiveCfg = Release|Any CPU

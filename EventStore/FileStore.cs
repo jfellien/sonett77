@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using EventStore.Contracts;
+using System.Linq;
 
 namespace EventStore
 {
@@ -12,7 +13,6 @@ namespace EventStore
 		public FileStore (string destination)
 		{
 			this._destination = destination;
-
 		}
 
 		public void Store (IAmAnEvent @event)
@@ -43,6 +43,13 @@ namespace EventStore
 
 				yield return someEvent;
 			}
+		}
+
+		public IEnumerable<String> RetrieveEntities ()
+		{
+			var folders = Directory.GetDirectories (_destination);
+
+			return folders.Select (folder => folder.Replace (_destination + "/", "")).ToList ();
 		}
 	}
 }

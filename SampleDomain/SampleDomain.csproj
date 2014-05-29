@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{98B12F43-61D6-4592-83F0-195625C6C3A4}</ProjectGuid>
+    <ProjectGuid>{834714A2-295E-4AEA-84E6-0CE7FA9DBD39}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>EventStore.Contracts</RootNamespace>
-    <AssemblyName>EventStore.Contracts</AssemblyName>
+    <RootNamespace>SampleDomain</RootNamespace>
+    <AssemblyName>SampleDomain</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,18 +31,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IAmAnEvent.cs" />
-    <Compile Include="Models\EventList.cs" />
-    <Compile Include="Events\BabyIsBorn.cs" />
-    <Compile Include="Events\SomeEvent.cs" />
-    <Compile Include="Events\StartWithSchool.cs" />
-    <Compile Include="Events\GetGraduation.cs" />
-    <Compile Include="Events\BecomesBaby.cs" />
-    <Compile Include="Events\Marries.cs" />
+    <Compile Include="Person.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Events\" />
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\EventStore\EventStore.csproj">
+      <Project>{AF86EAA0-ADBF-4AC6-A7E7-E65F0201BF74}</Project>
+      <Name>EventStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventStore.Contracts\EventStore.Contracts.csproj">
+      <Project>{98B12F43-61D6-4592-83F0-195625C6C3A4}</Project>
+      <Name>EventStore.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -1,0 +1,41 @@
+﻿@Master['layout']
+
+@Section['Content']
+<div class="form">
+	<h3>Add a new Person</h3>
+
+	<form class="form-horizontal" role="form" method="POST">
+		<div class="form-group">
+
+			<div class="col-md-5">
+				<div class="input-group">
+					<span class="input-group-addon">First Name</span>
+					<input type="text" class="form-control" id="FirstName" name="FirstName" value="@Model.FirstName" placeholder="First Name"/>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-md-offset-1">
+				<div class="input-group">
+					<span class="input-group-addon">Last Name</span>
+					<input type="text" class="form-control" id="LastName" name="LastName" value="@Model.LastName" placeholder="Last Name"/>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-5">
+				<div class="input-group">
+					<span class="input-group-addon">Born in</span>
+					<input type="text" class="form-control" id="Year" name="Year" value="@Model.Year" placeholder="Year"/>
+				</div>
+			</div>
+ 		</div>
+		<div class="form-group">
+			<div class="col-md-3">
+				<input class="btn btn-success" type="submit" value="Haleluja"/>
+				<a class="btn btn-default" href="/index" role="button">Oh no... not yet</a>
+			</div>
+ 		</div>
+	</form>
+</div>
+
+@EndSection

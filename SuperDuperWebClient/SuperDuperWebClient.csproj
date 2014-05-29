@@ -61,8 +61,11 @@
     <Content Include="Content\css\own-style.css" />
     <Content Include="Views\layout.html" />
     <Content Include="Views\index.html" />
-    <Content Include="Views\People\new.html" />
-    <Content Include="Views\People\list.html" />
+    <Content Include="Views\Person\list-people.html" />
+    <Content Include="Views\Person\list-events.html" />
+    <Content Include="Views\Person\new.html" />
+    <Content Include="Views\Person\state-of-person.html" />
+    <Content Include="Views\Person\happened.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -71,12 +74,16 @@
     <Folder Include="Content\css\" />
     <Folder Include="Content\js\" />
     <Folder Include="Content\fonts\" />
-    <Folder Include="Views\People\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Person\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Index.cs" />
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Controller\People.cs" />
+    <Compile Include="Models\Baby.cs" />
+    <Compile Include="Models\Happening.cs" />
+    <Compile Include="HappeningExtension.cs" />
+    <Compile Include="Controller\PersonController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\fonts\glyphicons-halflings-regular.eot" />
@@ -95,6 +102,10 @@
     <ProjectReference Include="..\EventStore.Contracts\EventStore.Contracts.csproj">
       <Project>{98B12F43-61D6-4592-83F0-195625C6C3A4}</Project>
       <Name>EventStore.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleDomain\SampleDomain.csproj">
+      <Project>{834714A2-295E-4AEA-84E6-0CE7FA9DBD39}</Project>
+      <Name>SampleDomain</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

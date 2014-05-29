@@ -1,0 +1,17 @@
+﻿@Master['layout']
+
+@Section['Content']
+<div class="form">
+
+	<h3>List of all Entities</h3>
+
+	<ul>
+	@Each
+		<li>
+		<a href="/person/list/@Current">@Current</a>
+		</li>
+	@EndEach
+	</ul>
+</div>
+
+@EndSection

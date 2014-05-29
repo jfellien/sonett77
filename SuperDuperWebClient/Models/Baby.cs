@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace EventStore.Contracts.Models
+namespace SuperDuperWebClient
 {
-	public class Person
+	public class Baby
 	{
 		public String FirstName {
 			get;
@@ -10,6 +10,11 @@ namespace EventStore.Contracts.Models
 		}
 
 		public String LastName {
+			get;
+			set;
+		}
+
+		public int Year {
 			get;
 			set;
 		}

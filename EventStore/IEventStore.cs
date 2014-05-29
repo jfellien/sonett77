@@ -10,6 +10,8 @@ namespace EventStore
 		void Store (IAmAnEvent @event);
 
 		IEnumerable<IAmAnEvent> RetrieveBy (string entityId);
+
+		IEnumerable<String> RetrieveEntities ();
 	}
 }
 

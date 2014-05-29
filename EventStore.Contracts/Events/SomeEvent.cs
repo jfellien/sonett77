@@ -1,6 +1,7 @@
 ﻿using System;
+using EventStore.Contracts;
 
-namespace EventStore.Contracts
+namespace EventStore.Contracts.Events
 {
 	public class SomeEvent : IAmAnEvent
 	{

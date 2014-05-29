@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using EventStore.Contracts.Models;
 
-namespace EventStore.Contracts
+namespace EventStore.Contracts.Models
 {
 	public class Events
 	{
