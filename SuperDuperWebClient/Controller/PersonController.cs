@@ -19,9 +19,9 @@ namespace SuperDuperWebClient
 		
 			this.eventStore = eventStore;
 
-			Get ["/born"] = _ => NewBaby ();
+			Get ["/new-baby"] = _ => NewBaby ();
 
-			Post ["/born"] = _ => RegisterThisBaby ();
+			Post ["/new-baby"] = _ => RegisterThisBaby ();
 
 			Get ["/happened/{eventName}/{entityId}"] = _ => WhenItsHappened (_.entityId, _.eventName);
 
@@ -37,7 +37,7 @@ namespace SuperDuperWebClient
 
 		Negotiator NewBaby ()
 		{
-			return View ["new", new Baby ()];
+			return View ["new-baby", new Baby ()];
 		}
 
 		Negotiator RegisterThisBaby ()

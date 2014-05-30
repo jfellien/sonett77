@@ -63,9 +63,9 @@
     <Content Include="Views\index.html" />
     <Content Include="Views\Person\list-people.html" />
     <Content Include="Views\Person\list-events.html" />
-    <Content Include="Views\Person\new.html" />
     <Content Include="Views\Person\state-of-person.html" />
     <Content Include="Views\Person\happened.html" />
+    <Content Include="Views\Person\new-baby.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
