@@ -4,19 +4,30 @@
 <ul class="nav nav-pills">
 	<li><a href="/person/happened/start-with-school/@Model.EntityId">First day of school</a></li>
 	<li><a href="/person/happened/get-a-graduation/@Model.EntityId">Graduation</a></li>
-	<li><a href="/person/happened/becomes-a-baby/@Model.EntityId">Become father</a></li>
+	<li><a href="/person/happened/becomes-a-baby/@Model.EntityId">Become a baby</a></li>
 	<li><a href="/person/happened/marries/@Model.EntityId">Marries</a></li>
 </ul>
 @EndSection
 
 @Section['Content']
 <div class="form">
-	<h1>@Model.FirstName @Model.LastName</h1>
-	<p class="lead">@Model.EntityId</p>
+	<h1>
+		<span class="glyphicon glyphicon-user"></span>
+		@Model.FirstName @Model.LastName
+	</h1>
+
+	<p class="lead">
+		<span class="glyphicon - glyphicon-barcode"></span>
+		@Model.EntityId
+	</p>
 
 	<div>
-		<p>This entity has <strong>@Model.ChildCount</strong> 
-		children and has married for <strong>@Model.MarriedCount</strong> times.</p>
+		<p>
+			This entity has 
+			<strong>@Model.ChildCount</strong> 
+			children and has married for 
+			<strong>@Model.MarriedCount</strong> 
+			times.</p>
 	</div>
 
 </div>

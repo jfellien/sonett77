@@ -21,6 +21,13 @@ namespace SampleDomain
 			_events = events;
 		}
 
+		public String EntityId {
+			get {
+				var entityId = _events.OfType<BabyIsBorn> ().First ().EntityId;
+				return entityId;
+			}
+		}
+
 		public String FirstName {
 			get {
 				var firstName = _events.OfType<BabyIsBorn> ().First ().FirstName;
@@ -32,6 +39,23 @@ namespace SampleDomain
 			get {
 				var lastName = _events.OfType<BabyIsBorn> ().First ().LastName;
 				return lastName;
+			}
+		}
+
+		public int ChildCount {
+			get {
+
+				var becomeBaby = _events.OfType<BecomesBaby> ().Count ();
+
+				return becomeBaby;
+			}
+		}
+
+		public int MarriedCount {
+			get {
+				var married = _events.OfType<Marries> ().Count ();
+
+				return married;
 			}
 		}
 	}
