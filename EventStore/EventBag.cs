@@ -5,7 +5,12 @@ namespace EventStore
 {
 	public class EventBag
 	{
-		public String EventId {
+		public Guid EventId {
+			get;
+			set;
+		}
+
+		public String EntityId {
 			get;
 			set;
 		}

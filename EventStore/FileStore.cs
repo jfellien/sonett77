@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using EventStore.Contracts;
 using System.Linq;
+using fastJSON;
 
 namespace EventStore
 {
@@ -38,8 +39,8 @@ namespace EventStore
 			foreach (var eventBagFile in allEventBagsOfEntity) {
 
 				var fileText = File.ReadAllText (eventBagFile);
-				var eventBagFromFile = fastJSON.JSON.ToObject<EventBag> (fileText);
-				var someEvent = fastJSON.JSON.ToObject (eventBagFromFile.EventData, Type.GetType (eventBagFromFile.EventType)) as IAmAnEvent;
+				var eventBagFromFile = fileText.ToEventBag ();
+				var someEvent = eventBagFromFile.ExtractEvent ();
 
 				yield return someEvent;
 			}
