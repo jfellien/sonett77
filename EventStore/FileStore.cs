@@ -52,6 +52,11 @@ namespace EventStore
 
 			return folders.Select (folder => folder.Replace (_destination + "/", "")).ToList ();
 		}
+
+		public IEnumerable<IAmAnEvent> RetrieveAllEvents ()
+		{
+			throw new NotImplementedException ();
+		}
 	}
 }
 

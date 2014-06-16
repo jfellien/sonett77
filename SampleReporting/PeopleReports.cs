@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using EventStore.Contracts;
 
 namespace SampleReporting
 {
-	public class MyClass
+	public class PeopleReports
 	{
-		public MyClass ()
+		public PeopleReports (IEnumerable<IAmAnEvent> events)
 		{
 		}
 	}

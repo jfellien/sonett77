@@ -12,6 +12,8 @@ namespace EventStore
 		IEnumerable<IAmAnEvent> RetrieveBy (string entityId);
 
 		IEnumerable<String> RetrieveEntities ();
+
+		IEnumerable<IAmAnEvent> RetrieveAllEvents ();
 	}
 }
 

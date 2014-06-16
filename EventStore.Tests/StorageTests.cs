@@ -13,7 +13,7 @@ namespace EventStore.Tests
 	{
 		bool deleteRecursive = true;
 		string eventsPath;
-		ProtoBufferStore _sut;
+		FileStore _sut;
 
 		[SetUp]
 		public void Setup ()
@@ -23,7 +23,7 @@ namespace EventStore.Tests
 
 			Directory.CreateDirectory (eventsPath);
 
-			_sut = new ProtoBufferStore (eventsPath);
+			_sut = new FileStore (eventsPath);
 		}
 
 		[TearDown]
