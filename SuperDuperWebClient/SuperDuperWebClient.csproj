@@ -92,7 +92,6 @@
     <None Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Content\css\bootstrap-theme.css.map" />
     <None Include="Content\css\bootstrap.css.map" />
-    <None Include="Spickzettel.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EventStore\EventStore.csproj">
