@@ -4,6 +4,7 @@ using System.IO;
 using FluentAssertions;
 using System.Diagnostics;
 using System.Linq;
+using EventStore;
 using EventStore.Contracts.Events;
 
 namespace EventStore.Tests
@@ -67,6 +68,26 @@ namespace EventStore.Tests
 			var entities = _sut.RetrieveEntities ();
 
 			entities.First ().Should ().BeEquivalentTo (@event.EntityId);
+		}
+
+		[Test]
+		public void FillInMemoryEventStore_WithAHugeListOfEvents ()
+		{
+			var inmemoryEventStore = new InMemoryStore ();
+
+			for (int i = 0; i < 100000; i++) {
+
+				inmemoryEventStore.Store (new SomeEvent {
+					EntityId = "One-Entity",
+					Name = "MyName",
+					SomeDate = new DateTime (2014, 5, 1, 12, 0, 0),
+					SomeNumber = i
+				});
+
+			}
+
+			inmemoryEventStore.RetrieveBy ("One-Entity").Count ().ShouldBeEquivalentTo (100000);
+
 		}
 	}
 }

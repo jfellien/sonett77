@@ -49,13 +49,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\EventStore\EventStore.csproj">
-      <Project>{AF86EAA0-ADBF-4AC6-A7E7-E65F0201BF74}</Project>
-      <Name>EventStore</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EventStore.Contracts\EventStore.Contracts.csproj">
       <Project>{98B12F43-61D6-4592-83F0-195625C6C3A4}</Project>
       <Name>EventStore.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventStore\EventStore.csproj">
+      <Project>{AF86EAA0-ADBF-4AC6-A7E7-E65F0201BF74}</Project>
+      <Name>EventStore</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
