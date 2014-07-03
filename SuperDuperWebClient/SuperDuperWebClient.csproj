@@ -66,6 +66,7 @@
     <Content Include="Views\Person\state-of-person.html" />
     <Content Include="Views\Person\happened.html" />
     <Content Include="Views\Person\new-baby.html" />
+    <Content Include="Views\Person\wedding.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />

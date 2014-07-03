@@ -31,6 +31,7 @@ namespace SuperDuperWebClient
 
 			if (source.EventName.Equals ("marries"))
 				return new Marries {
+					FamilyName = source.FamilyName,
 					At = source.Year
 				};
 

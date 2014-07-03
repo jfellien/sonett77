@@ -9,7 +9,7 @@ namespace SuperDuperWebClient
 			set;
 		}
 
-		public String LastName {
+		public String FamilyName {
 			get;
 			set;
 		}

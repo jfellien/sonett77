@@ -7,13 +7,11 @@
 		<div class="input-group">
 			<input type="hidden" id="FirstName" name="FirstName" value="@Model.FirstName"/>
 			<input type="hidden" id="FamilyName" name="FamilyName" value="@Model.FamilyName"/>
-			<input type="hidden" id="EventName" name="EventName" value="@Model.EventName"/>
+			<input type="hidden" id="EventName" name="EventName" value="marries"/>
 		</div>
 			<div class="col-md-5">
 				<h4>@Model.FirstName</h4>
 				<h4>@Model.FamilyName</h4>
-
-				<h4>@Model.EventName</h4>
 			</div>
 		</div>
 		<div class="form-group">
@@ -21,6 +19,12 @@
 				<div class="input-group">
 					<span class="input-group-addon">Year of Happening</span>
 					<input type="text" class="form-control" id="Year" name="Year" value="@Model.Year" placeholder="Year"/>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="input-group">
+					<span class="input-group-addon">New Family Name</span>
+					<input type="text" class="form-control" id="FamilyName" name="FamilyName" value="@Model.FamilyName" placeholder="Family Name"/>
 				</div>
 			</div>
  		</div>

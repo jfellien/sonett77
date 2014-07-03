@@ -14,7 +14,7 @@ namespace EventStore.Contracts.Events
 			set;
 		}
 
-		public String LastName {
+		public String FamilyName {
 			get;
 			set;
 		}

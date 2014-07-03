@@ -35,12 +35,18 @@ namespace SampleDomain
 			}
 		}
 
-		public String LastName {
+		public String FamilyName {
 			get {
 
-				// TODO: Ändern, für die Änderung des Nachnamens (z.B. Heirat)
-				var lastName = _events.OfType<BabyIsBorn> ().First ().LastName;
-				return lastName;
+				var familyName = _events.OfType<BabyIsBorn> ().First ().FamilyName;
+
+				if (MarriedCount > 0) {
+
+					familyName = _events.OfType<Marries> ().Last ().FamilyName;
+
+				}
+
+				return familyName;
 			}
 		}
 

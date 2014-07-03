@@ -23,6 +23,10 @@ namespace SuperDuperWebClient
 
 			Post ["/new-baby"] = _ => RegisterThisBaby ();
 
+			Get ["/wedding/{entityId}"] = _ => WeddingBegins (_.entityId);
+
+			Post ["/wedding/{entityId}"] = _ => RegisterEvent ();
+
 			Get ["/happened/{eventName}/{entityId}"] = _ => WhenItsHappened (_.entityId, _.eventName);
 
 			Post ["/happened/{eventName}/{entityId}"] = _ => RegisterEvent ();
@@ -44,11 +48,11 @@ namespace SuperDuperWebClient
 		{
 			var baby = this.Bind<Baby> ();
 
-			var entityId = baby.FirstName + "-" + baby.LastName;
+			var entityId = baby.FirstName + "-" + baby.FamilyName;
 			var babyIsBorn = new BabyIsBorn {
 				EntityId = entityId,
 				FirstName = baby.FirstName,
-				LastName = baby.LastName,
+				FamilyName = baby.FamilyName,
 				YearOfBorn = baby.Year
 			};
 
@@ -65,6 +69,16 @@ namespace SuperDuperWebClient
 			return View ["state-of-person", person];
 		}
 
+		Negotiator WeddingBegins (string entityId)
+		{
+			var person = RestoreFrom (entityId);
+
+			return View ["wedding", new {
+				FirstName = person.FirstName, 
+				FamilyName = person.FamilyName, 
+				Year = CurrentYear}];
+		}
+
 		Negotiator WhenItsHappened (string entityId, string eventName)
 		{
 			var person = RestoreFrom (entityId);
@@ -74,7 +88,7 @@ namespace SuperDuperWebClient
 				EventName = eventName,
 				Year = CurrentYear,
 				FirstName = person.FirstName,
-				LastName = person.LastName
+				FamilyName = person.FamilyName
 			}];
 		}
 
