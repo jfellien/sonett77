@@ -16,13 +16,13 @@ namespace EventStore
 			this._destination = destination;
 		}
 
-		public void Store (IAmAnEvent @event)
+		public void Store (String entityId, object @event)
 		{
 			var eventBag = @event.ToEventBag ();
-
+			eventBag.EntityId = entityId;
 			var serializedEventBag = eventBag.Serialize ();
 
-			var eventStore = Path.Combine (_destination, @event.EntityId);
+			var eventStore = Path.Combine (_destination, entityId);
 			var eventFile = Path.Combine (eventStore, eventBag.EventDate + "--" + eventBag.EventType);
 
 			Directory.CreateDirectory (eventStore);
@@ -30,7 +30,7 @@ namespace EventStore
 			File.WriteAllText (eventFile, serializedEventBag);
 		}
 
-		public IEnumerable<IAmAnEvent> RetrieveBy (string entityId)
+		public IEnumerable<object> RetrieveBy (string entityId)
 		{
 			var storeOfEntity = Path.Combine (_destination, entityId);
 
@@ -60,7 +60,7 @@ namespace EventStore
 			return folders.Select (folder => folder.Replace (_destination + "/", "")).ToList ();
 		}
 
-		public IEnumerable<IAmAnEvent> RetrieveAllEvents ()
+		public IEnumerable<object> RetrieveAllEvents ()
 		{
 			throw new NotImplementedException ();
 		}

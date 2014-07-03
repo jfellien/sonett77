@@ -10,7 +10,7 @@ namespace EventStore.Contracts.Models
 			set;
 		}
 
-		public IEnumerable<IAmAnEvent> List {
+		public IEnumerable<object> List {
 			get;
 			set;
 		}

@@ -2,13 +2,8 @@
 
 namespace EventStore.Contracts
 {
-	public class Marries : IAmAnEvent
+	public class Marries
 	{
-		public string EntityId {
-			get ;
-			set ;
-		}
-
 		public int At {
 			get;
 			set;

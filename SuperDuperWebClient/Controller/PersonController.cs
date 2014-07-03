@@ -52,7 +52,7 @@ namespace SuperDuperWebClient
 				YearOfBorn = baby.Year
 			};
 
-			eventStore.Store (babyIsBorn);
+			eventStore.Store (entityId, babyIsBorn);
 			var person = RestoreFrom (entityId);
 
 			return View ["state-of-person", person];
@@ -83,9 +83,9 @@ namespace SuperDuperWebClient
 			var happening = this.Bind<Happening> ();
 
 			var @event = happening.ToEvent ();
-			eventStore.Store (@event);
+			eventStore.Store (happening.EntityId, @event);
 
-			var person = RestoreFrom (@event.EntityId);
+			var person = RestoreFrom (happening.EntityId);
 
 			return View ["state-of-person", person];
 		}

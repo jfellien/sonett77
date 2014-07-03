@@ -36,38 +36,20 @@ namespace EventStore.Tests
 		[Test]
 		public void SaveAndLoadEventToFileStorage_ShouldTheSameEvent ()
 		{
+			var entityId = Guid.NewGuid ().ToString ();
 			var @event = new SomeEvent {
-				EntityId = Guid.NewGuid ().ToString (),
 				Name = "MyName",
 				SomeDate = new DateTime (2014, 5, 1, 12, 0, 0),
 				SomeNumber = 12345
 			};
 
-			_sut.Store (@event);
+			_sut.Store (entityId, @event);
 
-			var someEvent = _sut.RetrieveBy (@event.EntityId).First () as SomeEvent;
+			var someEvent = _sut.RetrieveBy (entityId).First () as SomeEvent;
 
-			someEvent.EntityId.Should ().BeEquivalentTo (@event.EntityId);
 			someEvent.Name.Should ().BeEquivalentTo (@event.Name);
 			someEvent.SomeNumber.Should ().Be (@event.SomeNumber);
 			someEvent.SomeDate.Should ().Be (@event.SomeDate);
-		}
-
-		[Test]
-		public void SaveAnEvent_ShouldGetTheSameEntityId ()
-		{
-			var @event = new SomeEvent {
-				EntityId = Guid.NewGuid ().ToString (),
-				Name = "MyName",
-				SomeDate = new DateTime (2014, 5, 1, 12, 0, 0),
-				SomeNumber = 12345
-			};
-
-			_sut.Store (@event);
-
-			var entities = _sut.RetrieveEntities ();
-
-			entities.First ().Should ().BeEquivalentTo (@event.EntityId);
 		}
 
 		[Test]
@@ -77,8 +59,7 @@ namespace EventStore.Tests
 
 			for (int i = 0; i < 100000; i++) {
 
-				inmemoryEventStore.Store (new SomeEvent {
-					EntityId = "One-Entity",
+				inmemoryEventStore.Store ("One-Entity", new SomeEvent {
 					Name = "MyName",
 					SomeDate = new DateTime (2014, 5, 1, 12, 0, 0),
 					SomeNumber = i

@@ -2,13 +2,8 @@
 
 namespace EventStore.Contracts
 {
-	public class BecomesBaby :IAmAnEvent
+	public class BecomesBaby
 	{
-		public string EntityId {
-			get ;
-			set ;
-		}
-
 		public int At {
 			get;
 			set;

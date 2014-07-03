@@ -2,13 +2,8 @@
 
 namespace EventStore.Contracts
 {
-	public class StartWithSchool : IAmAnEvent
+	public class StartWithSchool
 	{
-		public string EntityId {
-			get ;
-			set ;
-		}
-
 		public int At {
 			get;
 			set;

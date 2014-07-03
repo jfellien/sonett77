@@ -9,14 +9,14 @@ namespace SampleDomain
 {
 	public class Person
 	{
-		IEnumerable<IAmAnEvent> _events;
+		IEnumerable<object> _events;
 
-		public static Person WithEvents (IEnumerable<IAmAnEvent> events)
+		public static Person WithEvents (IEnumerable<object> events)
 		{
 			return new Person (events);
 		}
 
-		protected Person (IEnumerable<IAmAnEvent> events)
+		protected Person (IEnumerable<object> events)
 		{
 			_events = events;
 		}

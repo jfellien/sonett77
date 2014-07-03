@@ -9,13 +9,12 @@ namespace EventStore
 	{
 		static JSONParameters _serializationParameters = null;
 
-		public static EventBag ToEventBag (this IAmAnEvent source)
+		public static EventBag ToEventBag (this object source)
 		{
 			var serializedSource = JSON.ToJSON (source, DefaultSerializationParameters);
 
 			var eventBag = new EventBag {
 				EventId = Guid.NewGuid (),
-				EntityId = source.EntityId,
 				EventDate = DateTime.Now.ToUniversalTime ().ToString ("O"),
 				EventType = source.GetType ().Name,
 				EventData = serializedSource
@@ -31,10 +30,10 @@ namespace EventStore
 			return eventBag;
 		}
 
-		public static IAmAnEvent ExtractEvent (this EventBag source)
+		public static object ExtractEvent (this EventBag source)
 		{
 			var eventType = Type.GetType (source.EventType);
-			var @event = JSON.ToObject (source.EventData, eventType) as IAmAnEvent;
+			var @event = JSON.ToObject (source.EventData, eventType);
 
 			return @event;
 		}

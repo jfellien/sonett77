@@ -3,17 +3,8 @@ using EventStore.Contracts;
 
 namespace EventStore.Contracts.Events
 {
-	public class SomeEvent : IAmAnEvent
+	public class SomeEvent
 	{
-		public SomeEvent ()
-		{
-		}
-
-		public string EntityId {
-			get ;
-			set ;
-		}
-
 		public String Name {
 			get;
 			set;

@@ -16,20 +16,20 @@ namespace EventStore
 			_events = new Dictionary<String, List<String>> ();
 		}
 
-		public void Store (IAmAnEvent @event)
+		public void Store (String entityId, object @event)
 		{
 			var eventBag = @event.ToEventBag ();
 
 			var serializedEventBag = eventBag.Serialize ();
 
-			if (_events.ContainsKey (@event.EntityId)) {
-				_events [@event.EntityId].Add (serializedEventBag);
+			if (_events.ContainsKey (entityId)) {
+				_events [entityId].Add (serializedEventBag);
 			} else {
-				_events.Add (@event.EntityId, new List<String>{ serializedEventBag });
+				_events.Add (entityId, new List<String>{ serializedEventBag });
 			}
 		}
 
-		public IEnumerable<IAmAnEvent> RetrieveBy (string entityId)
+		public IEnumerable<object> RetrieveBy (string entityId)
 		{
 			var eventBagsOfEntity = _events [entityId];
 
@@ -47,7 +47,7 @@ namespace EventStore
 			return _events.Keys;
 		}
 
-		public IEnumerable<IAmAnEvent> RetrieveAllEvents ()
+		public IEnumerable<object> RetrieveAllEvents ()
 		{
 			throw new NotImplementedException ();
 		}

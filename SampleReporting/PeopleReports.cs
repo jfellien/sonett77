@@ -6,7 +6,7 @@ namespace SampleReporting
 {
 	public class PeopleReports
 	{
-		public PeopleReports (IEnumerable<IAmAnEvent> events)
+		public PeopleReports (IEnumerable<object> events)
 		{
 		}
 	}

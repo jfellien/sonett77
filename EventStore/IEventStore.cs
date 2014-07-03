@@ -7,14 +7,13 @@ namespace EventStore
 {
 	public interface IEventStore
 	{
-		// TODO: erweitern der Storemethode, um damit das Interface zu entfernen
-		void Store (IAmAnEvent @event);
+		void Store (String eventId, object @event);
 
-		IEnumerable<IAmAnEvent> RetrieveBy (string entityId);
+		IEnumerable<object> RetrieveBy (string entityId);
 
 		IEnumerable<String> RetrieveEntities ();
 
-		IEnumerable<IAmAnEvent> RetrieveAllEvents ();
+		IEnumerable<object> RetrieveAllEvents ();
 	}
 }
 

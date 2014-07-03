@@ -2,11 +2,11 @@
 
 namespace EventStore.Contracts.Events
 {
-	public class BabyIsBorn : IAmAnEvent
+	public class BabyIsBorn
 	{
-		public string EntityId {
-			get ;
-			set ;
+		public String EntityId {
+			get;
+			set;
 		}
 
 		public String FirstName {
