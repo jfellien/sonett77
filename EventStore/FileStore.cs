@@ -36,14 +36,21 @@ namespace EventStore
 
 			var allEventBagsOfEntity = Directory.GetFiles (storeOfEntity);
 
-			foreach (var eventBagFile in allEventBagsOfEntity) {
-
+			// read content of files and transform to EventBag
+			// order this list by EventDate
+			var eventBags = allEventBagsOfEntity
+				.Select (eventBagFile => {
 				var fileText = File.ReadAllText (eventBagFile);
-				var eventBagFromFile = fileText.ToEventBag ();
-				var someEvent = eventBagFromFile.ExtractEvent ();
 
-				yield return someEvent;
-			}
+				return fileText.ToEventBag ();
+			})
+				.OrderBy (eventBag => eventBag.EventDate)
+				.ToList ();
+
+			// Extract Event of any EventBag
+			var events = eventBags.Select (eventBag => eventBag.ExtractEvent ()).ToList ();
+
+			return events;
 		}
 
 		public IEnumerable<String> RetrieveEntities ()

@@ -37,6 +37,8 @@ namespace SampleDomain
 
 		public String LastName {
 			get {
+
+				// TODO: Ändern, für die Änderung des Nachnamens (z.B. Heirat)
 				var lastName = _events.OfType<BabyIsBorn> ().First ().LastName;
 				return lastName;
 			}
